@@ -33,7 +33,7 @@ promise.catch((error)=>console.log(error))
 const checheven=new Promise((resolve,reject)=>{
     let num=4;
     if(num%2===0)
-        resolve("num is even")
+        resolve("num is even")                          
         else
     reject("err num is not even")
 })
