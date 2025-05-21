@@ -1,3 +1,4 @@
+"use strict";
 //callbak function demo
 function display() {
     console.log("disply1");
@@ -15,7 +16,7 @@ display2();
 // }
 function demo(callback) {
     console.log("using callbck");
-    setTimeout(function () {
+    setTimeout(() => {
         callback();
     }, 2000);
 }
@@ -26,7 +27,7 @@ demo(mycallback);
 //promises ex
 function asynfun(callback) {
     console.log("i async fun");
-    setInterval(function () {
+    setInterval(() => {
         console.log("i setinterval");
         callback();
     }, 1000);
@@ -34,4 +35,4 @@ function asynfun(callback) {
 function printfun() {
     console.log("in printfun");
 }
-asynfun(printfun);
+//asynfun(printfun);
