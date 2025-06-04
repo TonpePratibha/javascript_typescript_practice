@@ -253,3 +253,6 @@ console.log(newarray.slice(2,6)); //gives vbalue of 32 to 5
 newarray.splice(4,4,3,5,6,7,8);
 console.log(newarray);
 
+
+
+
