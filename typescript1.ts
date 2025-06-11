@@ -24,7 +24,7 @@ console.log(taskstatus);
 
 //custom types 
 type users={
-    id:number;
+id:number;
 naame:string;
 email?:string;  //optional
 }
@@ -72,7 +72,100 @@ class Car implements vehicle{
     brand='porsche';
     speed=100;
     drive(){
-        console.log("driving at",this.speed);
+        console.log(this.brand+" driving at"+ this.speed);
     }
 
 }
+const c12=new Car;
+c12.drive();
+
+
+///inheritance
+class Animal{
+    constructor(public name:string){}
+
+    makesound():void{
+        console.log("some generic sound");
+
+    }
+
+}
+class Dog extends Animal{
+
+    makesound():void{ 
+        console.log(this.name+ " Bark");
+    }
+}
+
+const d=new Dog("Tommy");
+d.makesound();
+
+//generics
+
+function identity<T>(arg:T):T{
+    return arg;
+}
+let output=identity<string>("hello");
+console.log(output);
+
+
+function wrapArray<T>(value:T):T[]{
+    return [value];
+}
+
+let numarray=wrapArray<number>(56);
+ numarray=wrapArray<number>(50);
+ numarray.push(78);
+
+let strArray=wrapArray<string>("iuiu");
+console.log(numarray);
+console.log(strArray);
+
+
+interface Box<T>{
+    content:T;
+}
+const stringbox:Box<string>={content:"Books"};
+const numberBox:Box<number>={content:123};
+
+console.log(stringbox);
+console.log(numberBox);
+
+
+
+class Datastore<T>{
+    private data:T[]=[];
+    add(item:T){
+        this.data.push(item);
+
+    }
+    getAll():T[]{
+        return this.data;
+    }
+
+}
+
+const numberstore=new Datastore<number>();
+numberstore.add(90);
+numberstore.add(94);
+console.log(numberstore.getAll())
+
+
+const stringstore=new Datastore<string>();
+stringstore.add("opop");
+console.log(stringstore.getAll());
+
+function merge<T,U>(obj1:T,obj2:U):T & U{
+return{...obj1,...obj2};
+}
+
+const merged=merge({name:"Alice"},{age:20});
+console.log(merged);
+
+
+///arraystringmethods
+//typesoffunctions
+//asynchronius 
+//arrow functions
+
+
