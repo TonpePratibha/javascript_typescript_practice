@@ -139,3 +139,7 @@ function merge(obj1, obj2) {
 }
 var merged = merge({ name: "Alice" }, { age: 20 });
 console.log(merged);
+///arraystringmethods
+//typesoffunctions
+//asynchronius 
+//arrow functions
